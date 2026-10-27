@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, Cambria, serif;
+  --font-sans: "Be Vietnam Pro", system-ui, -apple-system, sans-serif;
+  --color-ivory: #FAF7F2;
+  --color-ivory-light: #FFFDF9;
+  --color-ivory-dark: #F3ECE1;
+  --color-crimson: #991B1E;
+  --color-crimson-dark: #781316;
+  --color-burgundy: #59151A;
+  --color-earth: #45362E;
+  --color-ochre: #C58B35;
+  --color-charcoal: #1C1917;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF7F2;
+    color: #1C1917;
+  }
+  
+  h1, h2, h3, .font-serif-heading {
+    font-family: var(--font-serif);
+  }
+}
+
+@keyframes silkShimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.animate-silk-shimmer {
+  animation: silkShimmer 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Gentle shake animation for accessory equip feedback */
+@keyframes gentleShake {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  15% {
+    transform: translate(-3px, -1px) rotate(-3deg) scale(1.04);
+  }
+  30% {
+    transform: translate(3px, 1px) rotate(2.5deg) scale(1.04);
+  }
+  45% {
+    transform: translate(-2px, -0.5px) rotate(-1.5deg) scale(1.02);
+  }
+  60% {
+    transform: translate(2px, 0.5px) rotate(1.5deg) scale(1.02);
+  }
+  75% {
+    transform: translate(-1px, 0px) rotate(-0.5deg) scale(1.01);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+.animate-gentle-shake {
+  animation: gentleShake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes accessoryPop {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-accessory-pop {
+  animation: accessoryPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
